@@ -1,2 +1,0 @@
-# MetanintTests
-learning examples
