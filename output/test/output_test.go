@@ -1,6 +1,10 @@
 package test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/n0fr1/MetanintTests/persons"
+)
 
 func TestOutput(t *testing.T) {
 
@@ -24,8 +28,11 @@ func TestOutput(t *testing.T) {
 	}
 
 	for _, tc = range cases {
+		
 		t.Run(tc.name, func(t *testing.T){
-			//result := 
+			result := persons.GetPersons()
 		}
 	}
 }
+
+//пишем тест-проверку
