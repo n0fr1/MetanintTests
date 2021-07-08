@@ -8,7 +8,7 @@ type Person struct {
 	Weight float64
 }
 
-func GetPersons(inputTable []Person) AllPersons {
+func GetPersons(inputTable AllPersons) AllPersons {
 
 	var people AllPersons
 

@@ -9,7 +9,7 @@ import (
 //ExampleT is example test
 func ExamplePerson() { //Example(Person) - в скобках обязательное название структуры
 
-	in := []persons.Person{ //используем тип, описанный в пакете persons - для входного слайса.
+	in := persons.AllPersons{ //используем тип, описанный в пакете persons - для входного слайса.
 
 		{Name: "Kevin",
 			Age:    24,

@@ -10,8 +10,8 @@ import (
 func main() {
 
 	// inputTable := []struct { //альтернативный вариант создания и заполнения структуры
-	// 	name   string			//в данном случае - не подходит, поскольку нужен именно тот же самый тип.
-	// 	age    int32			//[]persons.Person
+	// 	name   string			//в данном случае - не подходит.
+	// 	age    int32
 	// 	weight float64
 	// }{
 	// 	{name: "Kevin",
@@ -32,9 +32,8 @@ func main() {
 	// 	},
 	// }
 
-	inputTable := []persons.Person{ //используем тип, описанный в пакете persons - для входного слайса.
-
-		{Name: "Kevin",
+	inputTable := persons.AllPersons{ //используем тип, описанный в пакете persons - для входного слайса.
+		{Name: "Kevin", // возможно также так - []persons.Person
 			Age:    24,
 			Weight: 68.5,
 		}, {
