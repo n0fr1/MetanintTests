@@ -10,8 +10,8 @@ import (
 func main() {
 
 	// inputTable := []struct { //альтернативный вариант создания и заполнения структуры
-	// 	name   string
-	// 	age    int32
+	// 	name   string			//в данном случае - не подходит, поскольку нужен именно тот же самый тип.
+	// 	age    int32			//[]persons.Person
 	// 	weight float64
 	// }{
 	// 	{name: "Kevin",
