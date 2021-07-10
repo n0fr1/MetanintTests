@@ -10,7 +10,8 @@ type Person struct {
 
 func GetPersons(inputTable AllPersons) AllPersons {
 
-	var people AllPersons
+	//var people AllPersons
+	people := AllPersons{} //есть разница между двумя вариантами создания. В первом случае - переменная равна nil и тест не проходим.
 
 	for _, value := range inputTable {
 
