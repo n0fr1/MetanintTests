@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/n0fr1/MetanintTests/persons"
+	"github.com/n0fr1/MetanintTests/output/OutputPersons/persons"
 )
 
 func main() {

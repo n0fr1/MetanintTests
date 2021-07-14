@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/n0fr1/MetanintTests/persons"
+	"github.com/n0fr1/MetanintTests/output/OutputPersons/persons"
 )
 
 func TestPerson(t *testing.T) {
