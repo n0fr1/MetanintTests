@@ -1,4 +1,4 @@
-package readtest_test
+package read_test
 
 import (
 	"fmt"
