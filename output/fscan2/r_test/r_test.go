@@ -11,9 +11,9 @@ import (
 func TestPerson(t *testing.T) {
 
 	var people = []rw.Person{
-		{"Tom", 24, 68.5},
-		{"Bob", 25, 64.2},
-		{"Sam", 27, 73.6},
+		{Name: "Tom", Age: 24, Weight: 68.5},
+		{Name: "Bob", Age: 25, Weight: 64.2},
+		{Name: "Sam", Age: 27, Weight: 73.6},
 	}
 
 	t.Run("Testing", func(t *testing.T) {
