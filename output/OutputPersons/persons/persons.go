@@ -10,7 +10,6 @@ type Person struct {
 
 func GetPersons(inputTable AllPersons) AllPersons {
 
-	//var people AllPersons
 	people := AllPersons{} //есть разница между двумя вариантами создания. В первом случае - переменная равна nil и тест не проходим.
 
 	for _, value := range inputTable {
@@ -22,6 +21,7 @@ func GetPersons(inputTable AllPersons) AllPersons {
 	}
 
 	return people
+
 }
 
 func fillstruct(someone Person) *Person {
@@ -32,5 +32,3 @@ func fillstruct(someone Person) *Person {
 		Weight: someone.Weight,
 	}
 }
-
-//хотелось бы добавить в этот пример интерфейс.
