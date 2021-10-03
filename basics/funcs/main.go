@@ -10,6 +10,12 @@ func main() {
 	sumNumbers()
 	simpleCalcAnonym()
 	simpleCalcAnonym2()
+	simpleAnonym()
+	simpleAnonym2()
+	simpleAnonym3()
+	simpleAnonym4()
+	simpleAnonym5()
+
 }
 
 //пример №1 - с передачей неопределенного количества параметров (одного типа)
@@ -106,4 +112,71 @@ func plus(x, y int) string {
 
 func multiply(x, y int) string {
 	return fmt.Sprint(x) + " * " + fmt.Sprint(y) + " = " + fmt.Sprint(x*y)
+}
+
+//пример №6 - Простой пример анонимной функции
+func simpleAnonym() {
+	f := func(x, y int) int { return x + y }
+	fmt.Println(f(3, 4))
+	fmt.Println(f(6, 8))
+}
+
+//пример №7 - Другой простой пример анонимной функции
+func simpleAnonym2() {
+	action2(10, 25, func(x, y int) int { return x + y })
+	action2(5, 6, func(x, y int) int { return x + y })
+}
+
+func action2(n1, n2 int, operation func(int, int) int) {
+	result := operation(n1, n2)
+	fmt.Println(result)
+}
+
+//пример №8 - Анонимная функция как результат функции
+func simpleAnonym3() {
+	f := selectFn(1)
+	fmt.Println(f(2, 3))
+
+	f = selectFn(1)
+	fmt.Println(f(5, 2))
+
+}
+
+func selectFn(n int) func(x, y int) int {
+
+	if n == 1 {
+		return func(x, y int) int { return x + y }
+	} else if n == 2 {
+		return func(x, y int) int { return x - y }
+	} else {
+		return func(x, y int) int { return x * y }
+	}
+
+}
+
+//пример №9 - доступ к окружению, в котором вызываются анонимные функции
+func simpleAnonym4() {
+	f := square()
+	fmt.Println(f()) //9
+	fmt.Println(f()) //16
+	fmt.Println(f()) //25 - результат разный. кэшируется?
+}
+
+//пример №10 - доступ к окружению, в котором вызываются анонимные функции
+func simpleAnonym5() {
+	f := square()
+	fmt.Println(f()) //9
+
+	f = square()
+	fmt.Println(f()) //9
+}
+
+func square() func() int {
+	x := 2
+
+	return func() int {
+		x++
+		return x * x
+	}
+
 }

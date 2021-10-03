@@ -40,6 +40,7 @@ func exampleNotPointer() {
 	fmt.Println("a before: ", a)
 	incrementNotPointer(a)
 	fmt.Println("a after: ", a)
+	incrementNotPointer(a)
 }
 
 func incrementNotPointer(x int) {
