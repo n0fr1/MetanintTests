@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+//построчное считывание из файла
 func main() {
 
 	file, err := os.Open("../../bufWrite/main/some.dat")
