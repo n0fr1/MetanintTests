@@ -14,6 +14,7 @@ func main() {
 
 	var operation string
 
+	fmt.Print("Реализация простейшего калькулятора \n")
 	fmt.Print("Введите первое число: ")
 
 	argFirst, err := testInput()
@@ -23,6 +24,7 @@ func main() {
 	}
 
 	fmt.Print("Введите второе число: ")
+
 	argSecond, err := testInput()
 	if err != nil {
 		fmt.Fprint(os.Stderr, err)
@@ -46,22 +48,6 @@ func main() {
 	fmt.Println(f(argFirst, argSecond))
 }
 
-func sum(x, y float64) string {
-	return fmt.Sprint(x) + " + " + fmt.Sprint(y) + " = " + fmt.Sprint(x+y)
-}
-
-func subtract(x, y float64) string {
-	return fmt.Sprint(x) + " - " + fmt.Sprint(y) + " = " + fmt.Sprint(x-y)
-}
-
-func multiply(x, y float64) string {
-	return fmt.Sprint(x) + " * " + fmt.Sprint(y) + " = " + fmt.Sprint(x*y)
-}
-
-func divide(x, y float64) string {
-	return fmt.Sprint(x) + " / " + fmt.Sprint(y) + " = " + fmt.Sprint(x/y)
-}
-
 func selectFn(operation string) (func(float64, float64) string, error) {
 
 	if operation == "+" {
@@ -81,6 +67,22 @@ func selectFn(operation string) (func(float64, float64) string, error) {
 	}
 
 	return divide, errors.Wrap(errors.New("Не выбрана операция из доступных (+,-,*,/)\n"), "Ошибка") //оборачиваем ошибку
+}
+
+func sum(x, y float64) string {
+	return fmt.Sprint(x) + " + " + fmt.Sprint(y) + " = " + fmt.Sprint(x+y)
+}
+
+func subtract(x, y float64) string {
+	return fmt.Sprint(x) + " - " + fmt.Sprint(y) + " = " + fmt.Sprint(x-y)
+}
+
+func multiply(x, y float64) string {
+	return fmt.Sprint(x) + " * " + fmt.Sprint(y) + " = " + fmt.Sprint(x*y)
+}
+
+func divide(x, y float64) string {
+	return fmt.Sprint(x) + " / " + fmt.Sprint(y) + " = " + fmt.Sprint(x/y)
 }
 
 func testInput() (float64, error) {
