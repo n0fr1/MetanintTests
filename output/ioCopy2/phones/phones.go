@@ -1,6 +1,8 @@
 package phones
 
-import "io"
+import (
+	"io"
+)
 
 type PhoneReader string
 
