@@ -1,6 +1,5 @@
 //загрузка файлов на сервер
-//curl localhost:8000 -F 'file=@testfile.txt' http://localhost/home/evgeniy/upload
-//curl -i http://127.0.0.1:8000 - тестируем сервер
+//curl -F "file=@testfile.txt" http://localhost:8000/upload
 
 package main
 
