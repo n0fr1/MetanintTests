@@ -12,6 +12,7 @@ import (
 )
 
 type UploadHandler struct {
+	HostAddr  string
 	UploadDir string
 }
 
@@ -56,5 +57,10 @@ func (h *UploadHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Unable to save file", http.StatusInternalServerError)
 		return
 	}
-	fmt.Fprintf(w, "File %s has been successfully uploaded", header.Filename) //выводим сообщение об успешно загруженном файле
+
+	filelink := h.HostAddr + "/" + header.Filename
+	fmt.Fprintln(w, filelink)
+
+	//fmt.Fprintf(w, "File %s has been successfully uploaded", header.Filename) //выводим сообщение об успешно загруженном файле
+
 }
