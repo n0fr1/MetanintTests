@@ -5,7 +5,36 @@ import (
 	"testing"
 
 	"github.com/n0fr1/MetanintTests/basics/recursion/fibonacchi"
+	"github.com/stretchr/testify/assert"
 )
+
+func TestLoopAssert(t *testing.T) {
+
+	testCases := []struct {
+		name string
+		n    int
+		want int
+	}{
+		{name: "zero",
+			n:    0,
+			want: 0,
+		},
+		{name: "one",
+			n:    1,
+			want: 1,
+		},
+		{name: "seven",
+			n:    7,
+			want: 8,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			assert.Equal(t, tc.want, fibonacchi.Loop(tc.n))
+		})
+	}
+}
 
 func TestLoop(t *testing.T) {
 
